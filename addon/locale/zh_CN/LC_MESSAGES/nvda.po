@@ -1,0 +1,113 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the 'brailleCellIgnorer' package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 'brailleCellIgnorer' '0.1.0'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2026-01-25 23:17+0800\n"
+"PO-Revision-Date: 2026-01-30 07:08+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.8\n"
+
+#. Translators: Title of the Braille Cell Ignorer settings panel
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:53 buildVars.py:21
+msgid "Braille Cell Ignorer"
+msgstr "Braille Cell Ignorer"
+
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:57
+msgid ""
+"Configure which braille display cells should be ignored (useful for displays "
+"with damaged cells)."
+msgstr "配置应忽略哪些盲文单元（对单元损坏的点显器很有用）。"
+
+#. Translators: Label for the display profile selector
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:81
+msgid "&Display profile:"
+msgstr "点显器配置(&P)："
+
+#. Translators: Label for the read-only ignored cells display
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:99
+msgid "Ignored cells:"
+msgstr "忽略的单元："
+
+#. Translators: Button to remove the selected historical configuration
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:107
+msgid "&Remove this configuration"
+msgstr "移除配置(&R)"
+
+#. Translators: Combo box item for the currently connected display
+#. {name} is the display description, {cells} is the cell count
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:126
+#, python-brace-format
+msgid "{name} ({cells} cells) - Connected"
+msgstr "{name} ({cells} 单元) - 已连接"
+
+#. Translators: Combo box item for a historical display profile
+#. {name} is the driver name, {cells} is the cell count
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:147
+#, python-brace-format
+msgid "{name} ({cells} cells)"
+msgstr "{name} ({cells} 单元)"
+
+#. Translators: Label for ignored cells input with valid range
+#. {max} is the maximum valid cell number
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:197
+#, python-brace-format
+msgid "&Ignored cells (1-{max}, comma-separated):"
+msgstr "忽略的盲文单元 （1-{max}, 用英文逗号分隔）(&I)："
+
+#. Translators: Label for ignored cells input without range
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:200
+msgid "&Ignored cells (comma-separated):"
+msgstr "忽略的盲文单元（用英文逗号分隔）(&I)："
+
+#. Translators: Error when input contains invalid characters
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:251
+msgid "Only numbers and commas are allowed."
+msgstr "只允许使用数字和英文逗号。"
+
+#. Translators: Error when a value is not a valid number
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:265
+#, python-brace-format
+msgid "\"{value}\" is not a valid number."
+msgstr "\"{value}\" 不是有效数字。"
+
+#. Translators: Error when cell number is less than 1
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:268
+msgid "Cell numbers must be at least 1."
+msgstr "盲文单元编号不能小鱼1。"
+
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:278
+#, python-brace-format
+msgid "Cell numbers {cells} exceed display size ({max} cells)."
+msgstr "盲文单元编号 {cells} 超出最大范围 ({max})。"
+
+#: addon\globalPlugins\brailleCellIgnorer\settingsPanel.py:309
+msgid "Ignored cells"
+msgstr "忽略的盲文单元"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+msgid ""
+"An NVDA add-on that allows you to ignore damaged or malfunctioning braille "
+"display cells."
+msgstr "一个用于忽略损坏或故障点显器盲文单元的 NVDA 插件。"
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:29
+msgid "Initial version."
+msgstr "初始版本。"

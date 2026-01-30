@@ -1,5 +1,5 @@
 # A part of Braille Cell Ignorer
-# Copyright (C) 2025
+# Copyright (C) 2026 Cary-rowen <manchen_0528@outlook.com>
 # This file is covered by the GNU General Public License.
 
 """Core logic for mapping between logical and physical braille cells."""
@@ -66,7 +66,7 @@ class CellMappingManager:
 
 	def _filterDisplayDimensions(
 		self,
-		displayDimensions: braille.DisplayDimensions
+		displayDimensions: braille.DisplayDimensions,
 	) -> braille.DisplayDimensions:
 		"""Filter handler that reduces display size by ignored cell count.
 
@@ -80,10 +80,7 @@ class CellMappingManager:
 		self._ignoredCells = set(ignoredList)
 		if not self._ignoredCells or displayDimensions.numRows > 1:
 			return displayDimensions
-		validIgnoredCount = sum(
-			1 for cell in self._ignoredCells
-			if 0 <= cell < displayDimensions.numCols
-		)
+		validIgnoredCount = sum(1 for cell in self._ignoredCells if 0 <= cell < displayDimensions.numCols)
 		newNumCols = max(0, displayDimensions.numCols - validIgnoredCount)
 		return braille.DisplayDimensions(numRows=1, numCols=newNumCols)
 
@@ -131,6 +128,7 @@ class CellMappingManager:
 					display.display(cells)
 				except Exception:
 					from logHandler import log
+
 					log.error("Error displaying cells", exc_info=True)
 					handler.handleDisplayUnavailable()
 				return

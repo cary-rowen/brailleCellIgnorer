@@ -1,5 +1,5 @@
 # A part of Braille Cell Ignorer
-# Copyright (C) 2025
+# Copyright (C) 2026 Cary-rowen <manchen_0528@outlook.com>
 # This file is covered by the GNU General Public License.
 
 """Configuration management for ignored braille cells."""
@@ -27,6 +27,7 @@ class IgnoredCellsProfile:
 	:ivar numCells: The number of cells the display has.
 	:ivar ignoredCells: 1-based indices of cells to ignore.
 	"""
+
 	driverName: str
 	numCells: int
 	ignoredCells: list[int] = field(default_factory=list)
@@ -73,7 +74,7 @@ def loadProfiles() -> dict[str, IgnoredCellsProfile]:
 
 def _parseProfileFromNewFormat(
 	key: str,
-	cellList: list[int] | str
+	cellList: list[int] | str,
 ) -> IgnoredCellsProfile | None:
 	"""Parse a profile from the configuration format.
 

@@ -1,5 +1,5 @@
 # A part of Braille Cell Ignorer
-# Copyright (C) 2025
+# Copyright (C) 2026 Cary-rowen <manchen_0528@outlook.com>
 # This file is covered by the GNU General Public License.
 
 """Braille Cell Ignorer - A global plugin to ignore damaged braille cells.
@@ -18,7 +18,6 @@ from . import settingsPanel
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
-
 	def __init__(self):
 		super().__init__()
 		self._cellManager = cellMapping.CellMappingManager()

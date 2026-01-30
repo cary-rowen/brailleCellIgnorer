@@ -1,5 +1,5 @@
 # A part of Braille Cell Ignorer
-# Copyright (C) 2025
+# Copyright (C) 2026 Cary-rowen <manchen_0528@outlook.com>
 # This file is covered by the GNU General Public License.
 
 """Settings panel for configuring ignored braille cells."""
@@ -33,7 +33,7 @@ def register(cellManager: "CellMappingManager") -> None:
 	global _cellManager
 	_cellManager = cellManager
 	settingsDialogs.NVDASettingsDialog.categoryClasses.append(
-		BrailleCellIgnorerSettingsPanel
+		BrailleCellIgnorerSettingsPanel,
 	)
 
 
@@ -43,7 +43,7 @@ def unregister() -> None:
 	_cellManager = None
 	try:
 		settingsDialogs.NVDASettingsDialog.categoryClasses.remove(
-			BrailleCellIgnorerSettingsPanel
+			BrailleCellIgnorerSettingsPanel,
 		)
 	except ValueError:
 		pass
@@ -57,8 +57,7 @@ class BrailleCellIgnorerSettingsPanel(settingsDialogs.SettingsPanel):
 
 	# Translators: Description of the Braille Cell Ignorer settings panel
 	panelDescription = _(
-		"Configure which braille display cells should be ignored "
-		"(useful for displays with damaged cells)."
+		"Configure which braille display cells should be ignored (useful for displays with damaged cells).",
 	)
 
 	def makeSettings(self, sizer: wx.BoxSizer) -> None:
@@ -182,7 +181,7 @@ class BrailleCellIgnorerSettingsPanel(settingsDialogs.SettingsPanel):
 			return
 
 		key = self._profileKeys[self._selectedIndex]
-		isCurrentDisplay = (key == self._currentDisplayKey)
+		isCurrentDisplay = key == self._currentDisplayKey
 
 		if key in self._pendingChanges:
 			cells = self._pendingChanges[key]
@@ -278,7 +277,7 @@ class BrailleCellIgnorerSettingsPanel(settingsDialogs.SettingsPanel):
 			# Translators: Error when cell numbers exceed display size
 			# {cells} is the list of invalid numbers, {max} is the maximum valid cell number
 			return None, _(
-				"Cell numbers {cells} exceed display size ({max} cells)."
+				"Cell numbers {cells} exceed display size ({max} cells).",
 			).format(
 				cells=", ".join(str(c) for c in outOfRange),
 				max=maxCells,
@@ -329,11 +328,7 @@ class BrailleCellIgnorerSettingsPanel(settingsDialogs.SettingsPanel):
 					numCells=int(parts[1]),
 					ignoredCells=cells,
 				)
-		profilesToSave = {
-			key: profile
-			for key, profile in self._profiles.items()
-			if profile.ignoredCells
-		}
+		profilesToSave = {key: profile for key, profile in self._profiles.items() if profile.ignoredCells}
 		cellIgnorerConfig.saveProfiles(profilesToSave)
 		if _cellManager:
 			_cellManager.refreshIgnoredCells()
